@@ -21,10 +21,10 @@
       line-height: 1.5;
     }
 
-    /* Bandeau titre, comme sur le poster */
+    /* ---------- Bandeau : titre + logos ---------- */
     header {
       background: var(--bandeau);
-      padding: 20px 16px 16px;
+      padding: 16px 16px 18px;
       text-align: center;
       border-bottom: 3px solid var(--accent);
     }
@@ -40,13 +40,29 @@
       color: #444;
     }
 
+    /* Rangée de 5 logos */
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px 22px;
+      max-width: 44rem;
+      margin: 0 auto 16px;
+    }
+    .logos img {
+      height: 38px;          /* même hauteur pour tous */
+      width: auto;
+      max-width: 110px;
+      object-fit: contain;
+    }
+
+    /* ---------- Contenu ---------- */
     main {
       max-width: 44rem;
       margin: 0 auto;
       padding: 20px 16px 8px;
     }
-
-    /* Animation */
     figure {
       margin: 0 0 20px;
       padding: 10px;
@@ -68,7 +84,6 @@
       text-align: center;
       font-style: italic;
     }
-
     h2 {
       font-size: 1.05rem;
       color: var(--accent);
@@ -78,41 +93,30 @@
     }
     p { margin: 0 0 10px; font-size: 0.95rem; }
 
-    /* Logos */
-    .logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 18px 28px;
-      padding: 18px 16px;
-      margin-top: 12px;
-      border-top: 1px solid #ddd;
-    }
-    .logos img {
-      height: 44px;
-      width: auto;
-      max-width: 140px;
-      object-fit: contain;
-    }
-
     footer {
       text-align: center;
       font-size: 0.8rem;
       color: var(--gris);
-      padding: 4px 16px 24px;
+      padding: 12px 16px 24px;
     }
-    footer a { color: var(--accent); text-decoration: none; }
 
     @media (min-width: 700px) {
       header h1 { font-size: 1.7rem; }
-      .logos img { height: 54px; }
+      .logos img { height: 50px; max-width: 150px; }
+      .logos { gap: 14px 34px; }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <div class="logos">
+      <img src="logo-lemans.png"    alt="Le Mans Université"   onerror="this.style.display='none'">
+      <img src="logo-cnrs.png"      alt="CNRS"                 onerror="this.style.display='none'">
+      <img src="logo-laum.png"      alt="LAUM"                 onerror="this.style.display='none'">
+      <img src="logo-jjcab.png"     alt="JJCAB Compiègne 2026" onerror="this.style.display='none'">
+      <img src="logo-silentsys.png" alt="Silentsys"            onerror="this.style.display='none'">
+    </div>
     <h1>Optimisation vibratoire d'un interféromètre à fibre optique</h1>
     <p class="auteurs">
       E. Breton, C. Desjouy, P. O'Donoughue, C. Pezerat, A. Pelat, P. Brochard
@@ -121,7 +125,7 @@
 
   <main>
     <figure>
-      <img src="animation_plaque.gif" alt="Animation de la déformée de la plaque à 58 Hz">
+      <img src="animation.gif" alt="Animation de la déformée de la plaque à 58 Hz">
       <figcaption>Plaque vibrant à 58 Hz, fibre optique collée en spirale</figcaption>
     </figure>
 
@@ -135,14 +139,6 @@
       le long de la fibre, ainsi que la phase optique cumulée Δφ, qui détermine
       la sensibilité de l'interféromètre aux vibrations.
     </p>
-
-    <div class="logos">
-      <img src="logo-lemans.png"     alt="Le Mans Université" onerror="this.style.display='none'">
-      <img src="logo-cnrs.png"       alt="CNRS"               onerror="this.style.display='none'">
-      <img src="logo-laum.png"       alt="LAUM"               onerror="this.style.display='none'">
-      <img src="logo-silentsys.png"  alt="Silentsys"          onerror="this.style.display='none'">
-      <img src="logo-jjcab.png"      alt="JJCAB Compiègne 2026" onerror="this.style.display='none'">
-    </div>
   </main>
 
   <footer>
