@@ -1,6 +1,6 @@
 # Optimisation vibratoire d'un interféromètre à fibre optique
 
-![Animation de la déformée à 58 Hz](animation.gif)
+![Animation de la déformée à 58 Hz](animation_plaque.gif)
 
 Animation de la réponse d'une plaque vibrant à 58 Hz, instrumentée d'une fibre optique collée en spirale. La couleur de la fibre indique la déformation longitudinale ε₃ ; le graphique de droite montre la phase optique cumulée Δφ le long de la fibre.
 
