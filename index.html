@@ -3,19 +3,152 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vibrations d'une plaque instrumentée d'une fibre optique</title>
+  <title>Optimisation vibratoire d'un interféromètre à fibre optique</title>
   <style>
-    body { margin: 0; padding: 16px; background: #fffff4; color: #222;
-           font-family: Helvetica, Arial, sans-serif; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    h1 { font-size: 1.2rem; }
-    p { font-size: 0.95rem; max-width: 40rem; margin: 0.8rem auto; }
+    :root {
+      --fond: #fffff4;
+      --texte: #222;
+      --gris: #666;
+      --accent: #e8554e;
+      --bandeau: #cfc9bf;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--fond);
+      color: var(--texte);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    /* Bandeau titre, comme sur le poster */
+    header {
+      background: var(--bandeau);
+      padding: 20px 16px 16px;
+      text-align: center;
+      border-bottom: 3px solid var(--accent);
+    }
+    header h1 {
+      margin: 0 auto 6px;
+      max-width: 40rem;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+    header .auteurs {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #444;
+    }
+
+    main {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 20px 16px 8px;
+    }
+
+    /* Animation */
+    figure {
+      margin: 0 0 20px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--gris);
+      text-align: center;
+      font-style: italic;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 3px;
+      margin: 24px 0 8px;
+    }
+    p { margin: 0 0 10px; font-size: 0.95rem; }
+
+    /* Logos */
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 18px 28px;
+      padding: 18px 16px;
+      margin-top: 12px;
+      border-top: 1px solid #ddd;
+    }
+    .logos img {
+      height: 44px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gris);
+      padding: 4px 16px 24px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (min-width: 700px) {
+      header h1 { font-size: 1.7rem; }
+      .logos img { height: 54px; }
+    }
   </style>
 </head>
 <body>
-  <h1>Optimisation vibratoire d'un interféromètre à fibre optique</h1>
-  <img src="animation_plaque.gif" alt="Animation de la déformée à 58 Hz">
-  <p>Réponse d'une plaque vibrant à 58 Hz, instrumentée d'une fibre optique collée en spirale. La couleur de la fibre indique la déformation longitudinale ε₃.</p>
-  <p>E. Breton, C. Desjouy, P. O'Donoughue, C. Pezerat, A. Pelat, P. Brochard<br>LAUM · Silentsys · JJCAB 2026</p>
+
+  <header>
+    <h1>Optimisation vibratoire d'un interféromètre à fibre optique</h1>
+    <p class="auteurs">
+      E. Breton, C. Desjouy, P. O'Donoughue, C. Pezerat, A. Pelat, P. Brochard
+    </p>
+  </header>
+
+  <main>
+    <figure>
+      <img src="animation_plaque.gif" alt="Animation de la déformée de la plaque à 58 Hz">
+      <figcaption>Plaque vibrant à 58 Hz, fibre optique collée en spirale</figcaption>
+    </figure>
+
+    <h2>Que voit-on ?</h2>
+    <p>
+      La plaque vibre à 58 Hz. La couleur de la fibre indique la déformation
+      longitudinale ε<sub>3</sub> : en rouge elle est étirée, en bleu elle est comprimée.
+    </p>
+    <p>
+      Les courbes montrent les déformations ε<sub>1</sub>, ε<sub>2</sub> et ε<sub>3</sub>
+      le long de la fibre, ainsi que la phase optique cumulée Δφ, qui détermine
+      la sensibilité de l'interféromètre aux vibrations.
+    </p>
+
+    <div class="logos">
+      <img src="logo-lemans.png"     alt="Le Mans Université" onerror="this.style.display='none'">
+      <img src="logo-cnrs.png"       alt="CNRS"               onerror="this.style.display='none'">
+      <img src="logo-laum.png"       alt="LAUM"               onerror="this.style.display='none'">
+      <img src="logo-silentsys.png"  alt="Silentsys"          onerror="this.style.display='none'">
+      <img src="logo-jjcab.png"      alt="JJCAB Compiègne 2026" onerror="this.style.display='none'">
+    </div>
+  </main>
+
+  <footer>
+    Laboratoire d'Acoustique de l'Université du Mans · Silentsys, Le Mans<br>
+    JJCAB 2026, Compiègne
+  </footer>
+
 </body>
 </html>
